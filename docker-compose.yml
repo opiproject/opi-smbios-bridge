@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2022 Dell Inc, or its subsidiaries.
+---
+version: "3.7"
+
+services:
+
+  opi-smbios-server:
+    build:
+      context: .
+    ports:
+      - "50051:50051"
+    networks:
+      - opi
+    command: go run main.go -port=50051
+    healthcheck:
+      test: grpcurl -plaintext localhost:50051 list || exit 1
+
+  opi-smbios-test:
+    image: namely/grpc-cli
+    networks:
+      - opi
+    depends_on:
+      opi-smbios-server:
+        condition: service_healthy
+    command: call --json_input --json_output opi-smbios-server:50051 InventoryGet "{}"
+
+networks:
+  opi:
