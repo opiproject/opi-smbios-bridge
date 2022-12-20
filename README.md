@@ -8,7 +8,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/opiproject/opi-smbios-bridge)](https://goreportcard.com/report/github.com/opiproject/opi-smbios-bridge)
 [![Last Release](https://img.shields.io/github/v/release/opiproject/opi-smbios-bridge?label=Latest&style=flat-square&logo=go)](https://github.com/opiproject/opi-smbios-bridge/releases)
 
-This is a [SMBIOS](https://www.dmtf.org/standards/smbios) plugin to OPI inventory gRPC APIs based on dmidecode and ghw go library.
+This is a [SMBIOS](https://www.dmtf.org/standards/smbios) plugin to OPI inventory gRPC APIs based on [dmidecode](https://linux.die.net/man/8/dmidecode) and [ghw](https://github.com/jaypipes/ghw) go library.
 
 ## I Want To Contribute
 
