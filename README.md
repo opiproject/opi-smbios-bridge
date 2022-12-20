@@ -54,6 +54,50 @@ $ docker run --rm -it -v /var/tmp/:/var/tmp/ -p 50051:50051 ghcr.io/opiproject/o
 on X86 management VM run
 
 ```bash
-docker run --network=host --rm -it namely/grpc-cli ls   --json_input --json_output 10.10.10.10:50051 -l
-docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
+$ docker run --network=host --rm -it namely/grpc-cli ls 10.10.10.10:50051 opi_api.inventory.v1.InventorySvc -l
+filename: inventory.proto
+package: opi_api.inventory.v1;
+service InventorySvc {
+  rpc InventoryGet(opi_api.inventory.v1.InventoryGetRequest) returns (opi_api.inventory.v1.InventoryGetResponse) {}
+}
+
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
+connecting to 10.10.10.10:50051
+{
+ "bios": {
+  "vendor": "https://www.mellanox.com",
+  "version": "BlueField:3.7.0-20-g98daf29",
+  "date": "Jun 26 2021"
+ },
+ "system": {
+  "family": "BlueField",
+  "name": "BlueField SoC",
+  "vendor": "https://www.mellanox.com",
+  "serialNumber": "Unspecified System Serial Number",
+  "uuid": "63ec430e-7620-479a-8ec5-133de3972679",
+  "sku": "Unspecified System SKU",
+  "version": "1.0.0"
+ },
+ "baseboard": {
+  "assetTag": "Unspecified Asset Tag",
+  "serialNumber": "Unspecified Base Board Serial Number",
+  "vendor": "https://www.mellanox.com",
+  "version": "1.0.0",
+  "product": "BlueField SoC"
+ },
+ "chassis": {
+  "assetTag": "Unspecified Chassis Board Asset Tag",
+  "serialNumber": "Unspecified Chassis Board Serial Number",
+  "type": "1",
+  "typeDescription": "Other",
+  "vendor": "https://www.mellanox.com",
+  "version": "1.0.0"
+ },
+ "processor": {},
+ "memory": {
+  "totalPhysicalBytes": "17179869184",
+  "totalUsableBytes": "16733876224"
+ }
+}
+Rpc succeeded with OK status
 ```
