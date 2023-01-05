@@ -26,6 +26,8 @@ github.com/mitchellh/go-homedir v1.1.0 h1:lukF9ziXFxDFPkA1vsr5zpc1XuPDn/wFntq5mG
 github.com/mitchellh/go-homedir v1.1.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=
 github.com/opiproject/opi-api v0.0.0-20221220003855-844775ae0e14 h1:ZjzswIdvCpehv/QI86y5fdAf3YLrYEZGz13butIcYS0=
 github.com/opiproject/opi-api v0.0.0-20221220003855-844775ae0e14/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
+github.com/opiproject/opi-api v0.0.0-20230105195424-f410dd418885 h1:hjPymbqTQ68BHMpjZmEhpQer0R3hB+4XcjLw6rwzmyU=
+github.com/opiproject/opi-api v0.0.0-20230105195424-f410dd418885/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/spf13/cobra v0.0.3/go.mod h1:1l0Ry5zgKvJasoi3XT1TypsSe7PqH0Sj9dhYf7v3XqQ=
