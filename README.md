@@ -61,6 +61,8 @@ service InventorySvc {
   rpc InventoryGet(opi_api.inventory.v1.InventoryGetRequest) returns (opi_api.inventory.v1.InventoryGetResponse) {}
 }
 
+# NVIDIA example:
+
 $ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
 connecting to 10.10.10.10:50051
 {
@@ -97,6 +99,39 @@ connecting to 10.10.10.10:50051
  "memory": {
   "totalPhysicalBytes": "17179869184",
   "totalUsableBytes": "16733876224"
+ }
+}
+Rpc succeeded with OK status
+
+# MARVELL example:
+
+docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
+connecting to 11.11.11.11:50051
+{
+ "bios": {
+  "vendor": "U-Boot",
+  "version": "2020.10-6.0.0",
+  "date": "08/25/2022"
+ },
+ "system": {
+  "name": "cn10k",
+  "vendor": "Marvell",
+  "serialNumber": "CN106-A1-CRB-R1-143",
+  "uuid": "30314e43-2d36-3141-2d43-52422d52312d"
+ },
+ "baseboard": {
+  "vendor": "Marvell",
+  "product": "cn10k"
+ },
+ "chassis": {
+  "type": "23",
+  "typeDescription": "Rack mount chassis",
+  "vendor": "Marvell"
+ },
+ "processor": {},
+ "memory": {
+  "totalPhysicalBytes": "51099402240",
+  "totalUsableBytes": "51099402240"
  }
 }
 Rpc succeeded with OK status
