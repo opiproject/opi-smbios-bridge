@@ -36,6 +36,8 @@ github.com/opiproject/opi-api v0.0.0-20230123165122-10e47bafd42b h1:Ho6qkBoU1vfq
 github.com/opiproject/opi-api v0.0.0-20230123165122-10e47bafd42b/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
 github.com/opiproject/opi-api v0.0.0-20230125154820-1e771510c996 h1:20DbniIvEeEQeElilrkXINd4NHRJ3oVb+XDWJOzpYl4=
 github.com/opiproject/opi-api v0.0.0-20230125154820-1e771510c996/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
+github.com/opiproject/opi-api v0.0.0-20230126195639-3f4a4c1386bc h1:uA7OHK3pFilNImtr5TqL7kaHSg0CXxPfjYU1c90+JrI=
+github.com/opiproject/opi-api v0.0.0-20230126195639-3f4a4c1386bc/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/spf13/cobra v0.0.3/go.mod h1:1l0Ry5zgKvJasoi3XT1TypsSe7PqH0Sj9dhYf7v3XqQ=
