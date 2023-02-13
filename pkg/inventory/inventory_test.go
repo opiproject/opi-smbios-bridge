@@ -7,6 +7,7 @@ import (
 	"context"
 	"log"
 	"net"
+
 	// "reflect"
 	"testing"
 
@@ -43,7 +44,7 @@ func Test_InventoryGet(t *testing.T) {
 		errMsg  string
 	}{
 		{
-			"valid request with valid responce",
+			"valid request with valid response",
 			&pc.InventoryGetResponse{
 				Bios:      &pc.BIOSInfo{Vendor: "TBD", Version: "TBD", Date: "TBD"},
 				System:    &pc.SystemInfo{Family: "TBD", Name: "TBD", Vendor: "TBD", SerialNumber: "TBD", Uuid: "TBD", Sku: "TBD", Version: "TBD"},
@@ -63,7 +64,12 @@ func Test_InventoryGet(t *testing.T) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer conn.Close()
+	defer func(conn *grpc.ClientConn) {
+		err := conn.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+	}(conn)
 	client := pc.NewInventorySvcClient(conn)
 
 	// run tests
