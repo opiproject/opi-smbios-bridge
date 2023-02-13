@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
+// main is the main package of the application
 package main
 
 import (
@@ -16,6 +17,7 @@ type server struct {
 	pc.UnimplementedInventorySvcServer
 }
 
+// PluginInventory is the server that we export to load dynamically at runtime
 var PluginInventory server
 
 func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
