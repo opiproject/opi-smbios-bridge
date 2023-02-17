@@ -18,7 +18,7 @@ RUN go build -v -buildmode=plugin  -o /opi-smbios-bridge.so /app/pkg/... \
 
 # second stage to reduce image size
 FROM alpine:3.17
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat hwdata
 COPY --from=builder /opi-smbios-bridge /
 COPY --from=builder /opi-smbios-bridge.so /
 COPY --from=docker.io/fullstorydev/grpcurl:v1.8.7-alpine /bin/grpcurl /usr/local/bin/
