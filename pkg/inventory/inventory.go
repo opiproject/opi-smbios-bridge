@@ -60,6 +60,14 @@ func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (
 	}
 	fmt.Printf("%v\n", product)
 
+	pci, err := ghw.PCI()
+	if err != nil {
+		fmt.Printf("Error getting pci info: %v", err)
+	}
+	for _, dev := range pci.Devices {
+		fmt.Printf("PCI=%v\n", dev.String())
+	}
+
 	return &pc.InventoryGetResponse{
 		Bios:      &pc.BIOSInfo{Vendor: bios.Vendor, Version: bios.Version, Date: bios.Date},
 		System:    &pc.SystemInfo{Family: product.Family, Name: product.Name, Vendor: product.Vendor, SerialNumber: product.SerialNumber, Uuid: product.UUID, Sku: product.SKU, Version: product.Version},
@@ -67,5 +75,6 @@ func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (
 		Chassis:   &pc.ChassisInfo{AssetTag: chassis.AssetTag, SerialNumber: chassis.SerialNumber, Type: chassis.Type, TypeDescription: chassis.TypeDescription, Vendor: chassis.Vendor, Version: chassis.Version},
 		Processor: &pc.CPUInfo{TotalCores: int32(cpu.TotalCores), TotalThreads: int32(cpu.TotalThreads)},
 		Memory:    &pc.MemoryInfo{TotalPhysicalBytes: memory.TotalPhysicalBytes, TotalUsableBytes: memory.TotalUsableBytes},
+		// Pci:		&PCIeDeviceInfo{},
 	}, nil
 }
