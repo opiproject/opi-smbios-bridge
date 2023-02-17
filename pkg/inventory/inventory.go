@@ -64,8 +64,10 @@ func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (
 	if err != nil {
 		fmt.Printf("Error getting pci info: %v", err)
 	}
-	for _, dev := range pci.Devices {
-		fmt.Printf("PCI=%v\n", dev.String())
+	Blobarray := make([]*pc.PCIeDeviceInfo, len(pci.Devices))
+	for i, r := range pci.Devices {
+		fmt.Printf("PCI=%v\n", r)
+		Blobarray[i] = &pc.PCIeDeviceInfo{Driver: r.Driver, Address: r.Address, Vendor: r.Vendor.Name, Product: r.Product.Name, Revision: r.Revision, Subsystem: r.Subsystem.Name, Class: r.Class.Name, Subclass: r.Subclass.Name}
 	}
 
 	return &pc.InventoryGetResponse{
@@ -75,6 +77,6 @@ func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (
 		Chassis:   &pc.ChassisInfo{AssetTag: chassis.AssetTag, SerialNumber: chassis.SerialNumber, Type: chassis.Type, TypeDescription: chassis.TypeDescription, Vendor: chassis.Vendor, Version: chassis.Version},
 		Processor: &pc.CPUInfo{TotalCores: int32(cpu.TotalCores), TotalThreads: int32(cpu.TotalThreads)},
 		Memory:    &pc.MemoryInfo{TotalPhysicalBytes: memory.TotalPhysicalBytes, TotalUsableBytes: memory.TotalUsableBytes},
-		// Pci:		&PCIeDeviceInfo{},
+		Pci:       Blobarray,
 	}, nil
 }
