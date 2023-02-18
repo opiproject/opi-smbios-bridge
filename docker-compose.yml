@@ -16,7 +16,7 @@ services:
     healthcheck:
       test: grpcurl -plaintext localhost:50051 list || exit 1
 
-  opi-smbios-test:
+  opi-test:
     image: namely/grpc-cli
     networks:
       - opi
