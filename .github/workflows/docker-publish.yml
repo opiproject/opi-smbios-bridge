@@ -59,6 +59,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Update Docker Hub Description
+        if: github.event_name != 'pull_request'
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_DELETE }}
+          repository: ${{ github.repository }}
+          short-description: ${{ github.event.repository.description }}
+
   test:
     runs-on: ubuntu-latest
     steps:
