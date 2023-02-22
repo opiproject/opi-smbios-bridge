@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-package main
+// Package inventory is the main package of the application
+package inventory
 
 import (
 	"context"
@@ -23,7 +24,7 @@ import (
 func dialer() func(context.Context, string) (net.Conn, error) {
 	listener := bufconn.Listen(1024 * 1024)
 	server := grpc.NewServer()
-	pc.RegisterInventorySvcServer(server, &PluginInventory)
+	pc.RegisterInventorySvcServer(server, &Server{})
 
 	go func() {
 		if err := server.Serve(listener); err != nil {
