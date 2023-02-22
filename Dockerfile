@@ -13,14 +13,12 @@ RUN go mod download
 # build an app
 COPY cmd/ cmd/
 COPY pkg/ pkg/
-RUN go build -v -buildmode=plugin  -o /opi-smbios-bridge.so /app/pkg/... \
- && go build -v -buildmode=default -o /opi-smbios-bridge    /app/cmd/...
+RUN go build -v -o /opi-smbios-bridge ./cmd/...
 
 # second stage to reduce image size
 FROM alpine:3.17
-RUN apk add --no-cache libc6-compat hwdata
+RUN apk add --no-cache libc6-compat hwdata && rm -rf /var/cache/apk/*
 COPY --from=builder /opi-smbios-bridge /
-COPY --from=builder /opi-smbios-bridge.so /
 COPY --from=docker.io/fullstorydev/grpcurl:v1.8.7-alpine /bin/grpcurl /usr/local/bin/
 EXPOSE 50051
 CMD [ "/opi-smbios-bridge", "-port=50051" ]

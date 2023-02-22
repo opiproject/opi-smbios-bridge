@@ -20,27 +20,16 @@ See [CONTRIBUTING](https://github.com/opiproject/opi/blob/main/CONTRIBUTING.md) 
 
 ## Getting started
 
+build like this:
+
 ```bash
-go build -v -buildmode=plugin -o /opi-smbios-bridge.so ./...
+go build -v -o /opi-smbios-bridge ./cmd/...
 ```
 
- in main app:
+import like this:
 
 ```go
-package main
-import (
-    "plugin"
-    pc "github.com/opiproject/opi-api/common/v1/gen/go"
-)
-func main() {
-    plug, err := plugin.Open("/opi-smbios-bridge.so")
-    inventorySymbol, err := plug.Lookup("PluginInventory")
-    var inventory pc.InventorySvcServer
-    inventory, ok := inventorySymbol.(pc.InventorySvcServer)
-    s := grpc.NewServer()
-    pc.RegisterInventorySvcServer(s, inventory)
-    reflection.Register(s)
-}
+import "github.com/opiproject/opi-smbios-bridge/pkg/inventory"
 ```
 
 ## Using docker

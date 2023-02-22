@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright (c) 2022 Dell Inc, or its subsidiaries.
 
-// main is the main package of the application
-package main
+// Package inventory is the main package of the application
+package inventory
 
 import (
 	"context"
@@ -13,14 +13,13 @@ import (
 	pc "github.com/opiproject/opi-api/common/v1/gen/go"
 )
 
-type server struct {
+// Server contains inventory related OPI services
+type Server struct {
 	pc.UnimplementedInventorySvcServer
 }
 
-// PluginInventory is the server that we export to load dynamically at runtime
-var PluginInventory server
-
-func (s *server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
+// InventoryGet returns inventory information
+func (s *Server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
 	log.Printf("InventoryGet: Received from client: %v", in)
 
 	cpu, err := ghw.CPU()
