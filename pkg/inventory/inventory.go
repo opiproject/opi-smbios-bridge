@@ -19,7 +19,7 @@ type Server struct {
 }
 
 // InventoryGet returns inventory information
-func (s *Server) InventoryGet(ctx context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
+func (s *Server) InventoryGet(_ context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
 	log.Printf("InventoryGet: Received from client: %v", in)
 
 	cpu, err := ghw.CPU()
