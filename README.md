@@ -9,6 +9,8 @@
 [![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/opiproject/opi-smbios-bridge)
 [![Pulls](https://img.shields.io/docker/pulls/opiproject/opi-smbios-bridge.svg?logo=docker&style=flat&label=Pulls)](https://hub.docker.com/r/opiproject/opi-smbios-bridge)
 [![Last Release](https://img.shields.io/github/v/release/opiproject/opi-smbios-bridge?label=Latest&style=flat-square&logo=go)](https://github.com/opiproject/opi-smbios-bridge/releases)
+[![GitHub stars](https://img.shields.io/github/stars/opiproject/opi-smbios-bridge.svg?style=flat-square&label=github%20stars)](https://github.com/opiproject/opi-smbios-bridge)
+[![GitHub Contributors](https://img.shields.io/github/contributors/opiproject/opi-smbios-bridge.svg?style=flat-square)](https://github.com/opiproject/opi-smbios-bridge/graphs/contributors)
 
 This is a [SMBIOS](https://www.dmtf.org/standards/smbios) plugin to OPI inventory gRPC APIs based on [dmidecode](https://linux.die.net/man/8/dmidecode) and [ghw](https://github.com/jaypipes/ghw) go library implementing [protobuf](https://github.com/opiproject/opi-api/blob/main/common/v1/inventory.proto).
 
