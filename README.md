@@ -53,9 +53,11 @@ package: opi_api.inventory.v1;
 service InventorySvc {
   rpc InventoryGet(opi_api.inventory.v1.InventoryGetRequest) returns (opi_api.inventory.v1.InventoryGetResponse) {}
 }
+```
 
-# NVIDIA example:
+### Nvidia example
 
+```bash
 $ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
 connecting to 10.10.10.10:50051
 {
@@ -150,9 +152,11 @@ connecting to 10.10.10.10:50051
   ]
 }
 Rpc succeeded with OK status
+```
 
-# MARVELL example:
+### Marvell example
 
+```bash
 docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
 connecting to 11.11.11.11:50051
 {
@@ -184,3 +188,11 @@ connecting to 11.11.11.11:50051
 }
 Rpc succeeded with OK status
 ```
+
+### Intel example
+
+tbd
+
+### AMD example
+
+tbd
