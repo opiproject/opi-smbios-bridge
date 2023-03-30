@@ -59,40 +59,95 @@ service InventorySvc {
 $ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
 connecting to 10.10.10.10:50051
 {
- "bios": {
-  "vendor": "https://www.mellanox.com",
-  "version": "BlueField:3.7.0-20-g98daf29",
-  "date": "Jun 26 2021"
- },
- "system": {
-  "family": "BlueField",
-  "name": "BlueField SoC",
-  "vendor": "https://www.mellanox.com",
-  "serialNumber": "Unspecified System Serial Number",
-  "uuid": "63ec430e-7620-479a-8ec5-133de3972679",
-  "sku": "Unspecified System SKU",
-  "version": "1.0.0"
- },
- "baseboard": {
-  "assetTag": "Unspecified Asset Tag",
-  "serialNumber": "Unspecified Base Board Serial Number",
-  "vendor": "https://www.mellanox.com",
-  "version": "1.0.0",
-  "product": "BlueField SoC"
- },
- "chassis": {
-  "assetTag": "Unspecified Chassis Board Asset Tag",
-  "serialNumber": "Unspecified Chassis Board Serial Number",
-  "type": "1",
-  "typeDescription": "Other",
-  "vendor": "https://www.mellanox.com",
-  "version": "1.0.0"
- },
- "processor": {},
- "memory": {
-  "totalPhysicalBytes": "17179869184",
-  "totalUsableBytes": "16733876224"
- }
+  "bios": {
+    "vendor": "https://www.mellanox.com",
+    "version": "BlueField:3.7.0-20-g98daf29",
+    "date": "Jun 26 2021"
+  },
+  "system": {
+    "family": "BlueField",
+    "name": "BlueField SoC",
+    "vendor": "https://www.mellanox.com",
+    "serialNumber": "Unspecified System Serial Number",
+    "uuid": "2e3bc1d1-e205-4830-a817-968ed1978bac",
+    "sku": "Unspecified System SKU",
+    "version": "1.0.0"
+  },
+  "baseboard": {
+    "assetTag": "Unspecified Asset Tag",
+    "serialNumber": "Unspecified Base Board Serial Number",
+    "vendor": "https://www.mellanox.com",
+    "version": "1.0.0",
+    "product": "BlueField SoC"
+  },
+  "chassis": {
+    "assetTag": "Unspecified Chassis Board Asset Tag",
+    "serialNumber": "Unspecified Chassis Board Serial Number",
+    "type": "1",
+    "typeDescription": "Other",
+    "vendor": "https://www.mellanox.com",
+    "version": "1.0.0"
+  },
+  "processor": {
+    "totalCores": 8,
+    "totalThreads": 8
+  },
+  "memory": {
+    "totalPhysicalBytes": "17179869184",
+    "totalUsableBytes": "16733876224"
+  },
+  "pci": [
+    {
+      "driver": "pcieport",
+      "address": "0000:00:00.0",
+      "vendor": "Mellanox Technologies",
+      "product": "MT42822 BlueField-2 SoC Crypto enabled",
+      "revision": "0x00",
+      "subsystem": "unknown",
+      "class": "Bridge",
+      "subclass": "PCI bridge"
+    },
+    {
+      "driver": "pcieport",
+      "address": "0000:01:00.0",
+      "vendor": "Mellanox Technologies",
+      "product": "MT42822 Family [BlueField-2 SoC PCIe Bridge]",
+      "revision": "0x00",
+      "subsystem": "unknown",
+      "class": "Bridge",
+      "subclass": "PCI bridge"
+    },
+    {
+      "driver": "pcieport",
+      "address": "0000:02:00.0",
+      "vendor": "Mellanox Technologies",
+      "product": "MT42822 Family [BlueField-2 SoC PCIe Bridge]",
+      "revision": "0x00",
+      "subsystem": "unknown",
+      "class": "Bridge",
+      "subclass": "PCI bridge"
+    },
+    {
+      "driver": "mlx5_core",
+      "address": "0000:03:00.0",
+      "vendor": "Mellanox Technologies",
+      "product": "MT42822 BlueField-2 integrated ConnectX-6 Dx network controller",
+      "revision": "0x00",
+      "subsystem": "unknown",
+      "class": "Network controller",
+      "subclass": "Ethernet controller"
+    },
+    {
+      "driver": "mlx5_core",
+      "address": "0000:03:00.1",
+      "vendor": "Mellanox Technologies",
+      "product": "MT42822 BlueField-2 integrated ConnectX-6 Dx network controller",
+      "revision": "0x00",
+      "subsystem": "unknown",
+      "class": "Network controller",
+      "subclass": "Ethernet controller"
+    }
+  ]
 }
 Rpc succeeded with OK status
 
