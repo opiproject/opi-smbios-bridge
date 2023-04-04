@@ -156,36 +156,128 @@ Rpc succeeded with OK status
 
 ### Marvell example
 
+_Reduced output a little bit_
+
 ```bash
-docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
 connecting to 11.11.11.11:50051
 {
- "bios": {
+"bios": {
   "vendor": "U-Boot",
   "version": "2020.10-6.0.0",
-  "date": "08/25/2022"
- },
- "system": {
-  "name": "cn10k",
+  "date": "11/29/2021"
+},
+"system": {
+  "name": "octeontx2",
   "vendor": "Marvell",
-  "serialNumber": "CN106-A1-CRB-R1-143",
-  "uuid": "30314e43-2d36-3141-2d43-52422d52312d"
- },
- "baseboard": {
+  "serialNumber": "CN9600-CRB-BOARD-PR3-CP-R3P1-209",
+  "uuid": "36394e43-3030-432d-5242-2d424f415244"
+},
+"baseboard": {
   "vendor": "Marvell",
-  "product": "cn10k"
- },
+  "product": "octeontx2"
+},
  "chassis": {
   "type": "23",
   "typeDescription": "Rack mount chassis",
   "vendor": "Marvell"
- },
- "processor": {},
+},
+ "processor": {
+  "totalCores": 24,
+  "totalThreads": 24
+},
  "memory": {
-  "totalPhysicalBytes": "51099402240",
-  "totalUsableBytes": "51099402240"
+  "totalPhysicalBytes": "51118669824",
+  "totalUsableBytes": "51118669824"
+},
+ "pci": [
+  {
+   "address": "0000:00:01.0",
+   "vendor": "Cavium, Inc.",
+   "product": "THUNDERX PCC Bridge",
+   "revision": "0x11",
+   "subsystem": "unknown",
+   "class": "Bridge",
+   "subclass": "PCI bridge"
+  },
+   {
+   "address": "0000:01:01.0",
+   "vendor": "Cavium, Inc.",
+   "product": "THUNDERX NCSI (Network Controller Sideband Interface)",
+   "revision": "0x11",
+   "subsystem": "unknown",
+   "class": "Network controller",
+   "subclass": "Network controller"
+  },
+   {
+   "driver": "thunderx_mmc",
+   "address": "0000:01:01.4",
+   "vendor": "Cavium, Inc.",
+   "product": "THUNDERX eMMC/SD Controller",
+   "revision": "0x11",
+   "subsystem": "unknown",
+   "class": "Memory controller",
+   "subclass": "Memory controller"
+  },
+   {
+   "address": "0000:01:06.1",
+    "vendor": "Cavium, Inc.",
+    "product": "unknown",
+    "revision": "0x11",
+    "subsystem": "unknown",
+    "class": "Memory controller",
+    "subclass": "Memory controller"
+   },
+   {
+    "address": "0000:01:08.0",
+    "vendor": "Cavium, Inc.",
+    "product": "unknown",
+    "revision": "0x11",
+    "subsystem": "unknown",
+    "class": "Generic system peripheral",
+    "subclass": "System peripheral"
+   },
+   {
+    "driver": "Marvell-CGX!RPM",
+    "address": "0000:01:10.0",
+    "vendor": "Cavium, Inc.",
+    "product": "Octeon TX2 CGX (MAC)",
+    "revision": "0x11",
+    "subsystem": "unknown",
+    "class": "Network controller",
+    "subclass": "Network controller"
+   },
+   {
+    "driver": "cavium_rng_pf",
+    "address": "0000:03:00.0",
+    "vendor": "Cavium, Inc.",
+    "product": "THUNDERX Random Number Generator",
+    "revision": "0x11",
+    "subsystem": "unknown",
+    "class": "Processing accelerators",
+    "subclass": "Processing accelerators"
+   },
+   {
+    "address": "0005:00:00.0",
+    "vendor": "Cavium, Inc.",
+    "product": "THUNDERX PCIERC (PCIe Root Complex)",
+    "revision": "0x00",
+    "subsystem": "unknown",
+    "class": "Bridge",
+    "subclass": "PCI bridge"
+   },
+   {
+    "driver": "nvme",
+    "address": "0005:01:00.0",
+    "vendor": "Samsung Electronics Co Ltd",
+    "product": "NVMe SSD Controller PM9A1/PM9A3/980PRO",
+    "revision": "0x00",
+    "subsystem": "unknown",
+    "class": "Mass storage controller",
+    "subclass": "Non-Volatile memory controller"
+   }
+ ]
  }
-}
 Rpc succeeded with OK status
 ```
 
