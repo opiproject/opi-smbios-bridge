@@ -156,7 +156,7 @@ Rpc succeeded with OK status
 
 ### Marvell example
 
-_Reduced output a little bit_
+Reduced output a little bit...
 
 ```bash
 $ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
