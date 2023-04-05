@@ -283,7 +283,49 @@ Rpc succeeded with OK status
 
 ### Intel example
 
-tbd
+Values market as ```-------------``` will be populated in future FW releases.
+
+```bash
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.0.18:50051 InventoryGet "{}"
+connecting to 10.10.0.18:50051
+{
+"bios": {
+  "vendor": "Intel",
+  "version": "Intel(R) IPU Embedded UEFI FW 0.6.7 for AArch64",
+  "date": "Dec  9 2022"
+},
+"system": {
+  "family": "-------------",
+  "name": "Intel(R) Infrastructure Processing Unit (Intel(R) IPU)",
+  "vendor": "Intel",
+  "serialNumber": "-------------",
+  "uuid": "8a95d198-7f46-11e5-bf8b-08002704d48e",
+  "sku": "-------------",
+  "version": "A0"
+},
+"baseboard": {
+  "assetTag": "unknown",
+  "serialNumber": "unknown",
+  "vendor": "unknown",
+  "version": "unknown",
+  "product": "unknown"
+},
+"chassis": {
+  "assetTag": "N/A",
+  "serialNumber": "N/A",
+  "type": "1",
+  "typeDescription": "Other",
+  "vendor": "Intel",
+  "version": "N/A"
+},
+"processor": {},
+"memory": {
+  "totalPhysicalBytes": "13732470784",
+  "totalUsableBytes": "13732470784"
+}
+}
+Rpc succeeded with OK status
+```
 
 ### AMD example
 
