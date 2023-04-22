@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/jaypipes/ghw v0.10.1-0.20230329185050-227643e14380
-	github.com/opiproject/opi-api v0.0.0-20230414115038-99f54163f0e6
+	github.com/opiproject/opi-api v0.0.0-20230420192212-eb4dd1c1e3dc
 	google.golang.org/grpc v1.54.0
 )
 
