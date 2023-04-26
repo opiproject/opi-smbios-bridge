@@ -51,14 +51,14 @@ $ docker run --network=host --rm -it namely/grpc-cli ls 10.10.10.10:50051 opi_ap
 filename: inventory.proto
 package: opi_api.inventory.v1;
 service InventorySvc {
-  rpc InventoryGet(opi_api.inventory.v1.InventoryGetRequest) returns (opi_api.inventory.v1.InventoryGetResponse) {}
+  rpc GetInventory(opi_api.inventory.v1.GetInventoryRequest) returns (opi_api.inventory.v1.Inventory) {}
 }
 ```
 
 ### Nvidia example
 
 ```bash
-$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 InventoryGet "{}"
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.10.10:50051 GetInventory "{}"
 connecting to 10.10.10.10:50051
 {
   "bios": {
@@ -159,7 +159,7 @@ Rpc succeeded with OK status
 Reduced output a little bit...
 
 ```bash
-$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 InventoryGet "{}"
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 11.11.11.11:50051 GetInventory "{}"
 connecting to 11.11.11.11:50051
 {
 "bios": {
@@ -286,7 +286,7 @@ Rpc succeeded with OK status
 Values market as ```-------------``` will be populated in future FW releases.
 
 ```bash
-$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.0.18:50051 InventoryGet "{}"
+$ docker run --network=host --rm -it namely/grpc-cli call --json_input --json_output 10.10.0.18:50051 GetInventory "{}"
 connecting to 10.10.0.18:50051
 {
 "bios": {

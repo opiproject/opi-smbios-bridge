@@ -18,9 +18,9 @@ type Server struct {
 	pc.UnimplementedInventorySvcServer
 }
 
-// InventoryGet returns inventory information
-func (s *Server) InventoryGet(_ context.Context, in *pc.InventoryGetRequest) (*pc.InventoryGetResponse, error) {
-	log.Printf("InventoryGet: Received from client: %v", in)
+// GetInventory returns inventory information
+func (s *Server) GetInventory(_ context.Context, in *pc.GetInventoryRequest) (*pc.Inventory, error) {
+	log.Printf("GetInventory: Received from client: %v", in)
 
 	cpu, err := ghw.CPU()
 	if err != nil {
@@ -69,7 +69,7 @@ func (s *Server) InventoryGet(_ context.Context, in *pc.InventoryGetRequest) (*p
 		Blobarray[i] = &pc.PCIeDeviceInfo{Driver: r.Driver, Address: r.Address, Vendor: r.Vendor.Name, Product: r.Product.Name, Revision: r.Revision, Subsystem: r.Subsystem.Name, Class: r.Class.Name, Subclass: r.Subclass.Name}
 	}
 
-	return &pc.InventoryGetResponse{
+	return &pc.Inventory{
 		Bios:      &pc.BIOSInfo{Vendor: bios.Vendor, Version: bios.Version, Date: bios.Date},
 		System:    &pc.SystemInfo{Family: product.Family, Name: product.Name, Vendor: product.Vendor, SerialNumber: product.SerialNumber, Uuid: product.UUID, Sku: product.SKU, Version: product.Version},
 		Baseboard: &pc.BaseboardInfo{AssetTag: baseboard.AssetTag, SerialNumber: baseboard.SerialNumber, Vendor: baseboard.Vendor, Version: baseboard.Version, Product: baseboard.Product},
