@@ -23,7 +23,7 @@ services:
     depends_on:
       opi-smbios-server:
         condition: service_healthy
-    command: call --json_input --json_output opi-smbios-server:50051 InventoryGet "{}"
+    command: call --json_input --json_output opi-smbios-server:50051 GetInventory "{}"
 
 networks:
   opi:

@@ -37,16 +37,16 @@ func dialer() func(context.Context, string) (net.Conn, error) {
 	}
 }
 
-func Test_InventoryGet(t *testing.T) {
+func Test_GetInventory(t *testing.T) {
 	tests := []struct {
 		name    string
-		out     *pc.InventoryGetResponse
+		out     *pc.Inventory
 		errCode codes.Code
 		errMsg  string
 	}{
 		{
 			"valid request with valid response",
-			&pc.InventoryGetResponse{
+			&pc.Inventory{
 				Bios:      &pc.BIOSInfo{Vendor: "TBD", Version: "TBD", Date: "TBD"},
 				System:    &pc.SystemInfo{Family: "TBD", Name: "TBD", Vendor: "TBD", SerialNumber: "TBD", Uuid: "TBD", Sku: "TBD", Version: "TBD"},
 				Baseboard: &pc.BaseboardInfo{AssetTag: "TBD", SerialNumber: "TBD", Vendor: "TBD", Version: "TBD", Product: "TBD"},
@@ -76,8 +76,8 @@ func Test_InventoryGet(t *testing.T) {
 	// run tests
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			request := &pc.InventoryGetRequest{}
-			response, err := client.InventoryGet(ctx, request)
+			request := &pc.GetInventoryRequest{}
+			response, err := client.GetInventory(ctx, request)
 			if response != nil {
 				// if !reflect.DeepEqual(response, tt.out) {
 				if response.Bios.Vendor == "" {
