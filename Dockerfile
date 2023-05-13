@@ -18,7 +18,7 @@ COPY pkg/ pkg/
 RUN go build -v -o /opi-smbios-bridge ./cmd/...
 
 # second stage to reduce image size
-FROM alpine:3.17
+FROM alpine:3.18
 RUN apk add --no-cache hwdata && rm -rf /var/cache/apk/*
 COPY --from=builder /opi-smbios-bridge /
 COPY --from=docker.io/fullstorydev/grpcurl:v1.8.7-alpine /bin/grpcurl /usr/local/bin/
