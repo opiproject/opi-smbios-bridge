@@ -19,6 +19,8 @@ github.com/jaypipes/ghw v0.10.1-0.20230329185050-227643e14380 h1:jyt0G4jRwqNEbe+
 github.com/jaypipes/ghw v0.10.1-0.20230329185050-227643e14380/go.mod h1:jeJGbkRB2lL3/gxYzNYzEDETV1ZJ56OKr+CSeSEym+g=
 github.com/jaypipes/ghw v0.10.1-0.20230504185505-3ff88ab77a9e h1:iMbljUn3uJ1fiOZwxmyWBFGM52DYosibqf09EXLyXB4=
 github.com/jaypipes/ghw v0.10.1-0.20230504185505-3ff88ab77a9e/go.mod h1:jeJGbkRB2lL3/gxYzNYzEDETV1ZJ56OKr+CSeSEym+g=
+github.com/jaypipes/ghw v0.10.1-0.20230512193701-36ff37eb3bdf h1:39oOWIWZUVdnHJC4xpjVLS+mNcrJBIx6pMuF8mRCuuo=
+github.com/jaypipes/ghw v0.10.1-0.20230512193701-36ff37eb3bdf/go.mod h1:jeJGbkRB2lL3/gxYzNYzEDETV1ZJ56OKr+CSeSEym+g=
 github.com/jaypipes/pcidb v1.0.0 h1:vtZIfkiCUE42oYbJS0TAq9XSfSmcsgo9IdxSm9qzYU8=
 github.com/jaypipes/pcidb v1.0.0/go.mod h1:TnYUvqhPBzCKnH34KrIX22kAeEbDCSRJ9cqLRCuNDfk=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
