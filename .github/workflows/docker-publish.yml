@@ -79,6 +79,9 @@ jobs:
       - name: Install additional kernel modules needed for OPI like VRF
         run: sudo apt-get install linux-modules-extra-$(uname -r)
 
+      - name: Load additional kernel modules needed for OPI like VRF
+        run: sudo modprobe -v vrf
+
       - name: Start containers
         run: docker-compose up --build --force-recreate --detach opi-test
 
