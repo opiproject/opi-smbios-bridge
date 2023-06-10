@@ -3,7 +3,7 @@ module github.com/opiproject/opi-smbios-bridge
 go 1.19
 
 require (
-	github.com/jaypipes/ghw v0.10.1-0.20230512193701-36ff37eb3bdf
+	github.com/jaypipes/ghw v0.11.0
 	github.com/opiproject/opi-api v0.0.0-20230603003023-432a550f4f6c
 	google.golang.org/grpc v1.55.0
 )
