@@ -5,6 +5,9 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
 jobs:
   release-docker:
     uses: ./.github/workflows/docker-publish.yml
