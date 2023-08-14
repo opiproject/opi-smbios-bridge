@@ -80,7 +80,7 @@ jobs:
       - uses: docker/setup-buildx-action@v2.9.1
 
       - name: Install additional kernel modules needed for OPI like VRF
-        run: sudo apt-get update --yes && sudo apt-cache search linux-modules-extra && sudo apt-get install --no-install-recommends --yes linux-modules-extra-$(uname -r | sed 's/-azure//' | tr '-' '.') || true
+        run: sudo apt-get update --yes && sudo apt-cache search linux-modules-extra-$(uname -r) && sudo apt-get install --no-install-recommends --yes linux-modules-extra-$(uname -r | sed 's/-azure//' | tr '-' '.') || true
 
       - name: Load additional kernel modules needed for OPI like VRF
         run: sudo modprobe -v vrf
