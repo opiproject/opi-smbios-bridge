@@ -57,6 +57,12 @@ service InventorySvc {
 }
 ```
 
+HTTP example using grpc gateway
+
+```bash
+curl -kL http://10.10.10.10:8082/v1/inventory/1/inventory/2
+```
+
 ### Nvidia example
 
 ```bash
