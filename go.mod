@@ -6,7 +6,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.0
 	github.com/jaypipes/ghw v0.12.0
 	github.com/opiproject/opi-api v0.0.0-20230912155417-7e8775405e73
-	google.golang.org/grpc v1.58.0
+	google.golang.org/grpc v1.58.1
 )
 
 require (
