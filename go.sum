@@ -112,6 +112,8 @@ github.com/opiproject/opi-api v0.0.0-20230912155417-7e8775405e73 h1:NcvvILlduNtw
 github.com/opiproject/opi-api v0.0.0-20230912155417-7e8775405e73/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
 github.com/opiproject/opi-api v0.0.0-20230921193204-fe751a63af0b h1:UsMVDJw78tMjfSYMH6UGyXPDo2zEwpM1Yt/RlZQrj4Q=
 github.com/opiproject/opi-api v0.0.0-20230921193204-fe751a63af0b/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
+github.com/opiproject/opi-api v0.0.0-20230924031502-67b3821b62cf h1:i7kajMeK+FCJzVPEF5NXvc1y3joJLOz71/rNxtu7IMo=
+github.com/opiproject/opi-api v0.0.0-20230924031502-67b3821b62cf/go.mod h1:92pv4ulvvPMuxCJ9ND3aYbmBfEMLx0VCjpkiR7ZTqPY=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 golang.org/x/net v0.5.0 h1:GyT4nK/YDHSqa1c4753ouYCDajOYKTja9Xb/OHtgvSw=
