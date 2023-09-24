@@ -2,24 +2,10 @@ name: Update copyright year(s) in license file
 
 on:
   workflow_dispatch:
-  workflow_call:
   schedule:
     - cron: '0 3 1 1 *'
 
-permissions:
-  contents: read
-
 jobs:
   copyright:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: FantasticFiasco/action-update-license-year@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: |
-            Dockerfile
-            docker-compose.yml
-            ./**/*.go
+    uses: opiproject/actions/.github/workflows/update-copyright-years-in-license-file.yml@main
+    secrets: inherit
