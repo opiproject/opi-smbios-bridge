@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.0
 	github.com/jaypipes/ghw v0.12.0
-	github.com/opiproject/opi-api v0.0.0-20230926113732-f307f1aa0bd1
+	github.com/opiproject/opi-api v0.0.0-20231009064235-b166668c8a86
 	google.golang.org/grpc v1.58.2
 )
 
