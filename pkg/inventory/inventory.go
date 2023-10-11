@@ -10,7 +10,7 @@ import (
 	"log"
 
 	"github.com/jaypipes/ghw"
-	pc "github.com/opiproject/opi-api/common/v1/gen/go"
+	pc "github.com/opiproject/opi-api/inventory/v1/gen/go"
 )
 
 // Server contains inventory related OPI services

@@ -18,7 +18,7 @@ import (
 	"google.golang.org/grpc/status"
 	"google.golang.org/grpc/test/bufconn"
 
-	pc "github.com/opiproject/opi-api/common/v1/gen/go"
+	pc "github.com/opiproject/opi-api/inventory/v1/gen/go"
 )
 
 func dialer() func(context.Context, string) (net.Conn, error) {

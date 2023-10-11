@@ -13,7 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	pc "github.com/opiproject/opi-api/common/v1/gen/go"
+	pc "github.com/opiproject/opi-api/inventory/v1/gen/go"
 	"github.com/opiproject/opi-smbios-bridge/pkg/inventory"
 
 	"google.golang.org/grpc"
