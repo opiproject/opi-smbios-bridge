@@ -42,7 +42,7 @@ func runGrpcServer() {
 	}
 	s := grpc.NewServer()
 
-	pc.RegisterInventorySvcServer(s, &inventory.Server{})
+	pc.RegisterInventoryServiceServer(s, &inventory.Server{})
 	reflection.Register(s)
 
 	log.Printf("gRPC Server listening at %v", lis.Addr())
@@ -60,7 +60,7 @@ func runGatewayServer() {
 	// Note: Make sure the gRPC server is running properly and accessible
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())}
-	err := pc.RegisterInventorySvcHandlerFromEndpoint(ctx, mux, fmt.Sprintf(":%d", *grpcPort), opts)
+	err := pc.RegisterInventoryServiceHandlerFromEndpoint(ctx, mux, fmt.Sprintf(":%d", *grpcPort), opts)
 	if err != nil {
 		log.Panic("cannot register handler server")
 	}

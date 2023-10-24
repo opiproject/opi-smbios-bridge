@@ -15,7 +15,7 @@ import (
 
 // Server contains inventory related OPI services
 type Server struct {
-	pc.UnimplementedInventorySvcServer
+	pc.UnimplementedInventoryServiceServer
 }
 
 // GetInventory returns inventory information
