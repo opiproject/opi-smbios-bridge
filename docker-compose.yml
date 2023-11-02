@@ -41,7 +41,8 @@ services:
     networks:
       - opi
     depends_on:
-      - opi-gw-test
+      opi-gw-test:
+        condition: service_completed_successfully
     command: call --json_input --json_output opi-smbios-server:50051 GetInventory "{}"
 
 networks:
