@@ -7,7 +7,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.1
 	github.com/jaypipes/ghw v0.12.0
 	github.com/onsi/ginkgo/v2 v2.13.1
-	github.com/opiproject/opi-api v0.0.0-20231106063049-7979f3e83669
+	github.com/opiproject/opi-api v0.0.0-20231113071405-8df008ba93b3
 	github.com/vektra/mockery/v2 v2.36.1
 	golang.org/x/tools v0.15.0
 	google.golang.org/grpc v1.59.0
