@@ -8,7 +8,7 @@ require (
 	github.com/jaypipes/ghw v0.12.0
 	github.com/onsi/ginkgo/v2 v2.13.1
 	github.com/opiproject/opi-api v0.0.0-20231120071940-7b62be4a63bd
-	github.com/vektra/mockery/v2 v2.37.1
+	github.com/vektra/mockery/v2 v2.38.0
 	golang.org/x/tools v0.15.0
 	google.golang.org/grpc v1.59.0
 )
