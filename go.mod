@@ -9,7 +9,7 @@ require (
 	github.com/onsi/ginkgo/v2 v2.13.2
 	github.com/opiproject/opi-api v0.0.0-20231215164204-55bee9ef1e4b
 	github.com/vektra/mockery/v2 v2.38.0
-	golang.org/x/tools v0.16.0
+	golang.org/x/tools v0.16.1
 	google.golang.org/grpc v1.60.0
 )
 
