@@ -41,9 +41,9 @@ import "github.com/opiproject/opi-smbios-bridge/pkg/inventory"
 on DPU/IPU (i.e. with IP=10.10.10.1) run
 
 ```bash
-$ docker run --rm -it -p 50051:50051 ghcr.io/opiproject/opi-smbios-bridge:main
-2022/11/29 00:03:55 plugin serevr is &{{}}
-2022/11/29 00:03:55 server listening at [::]:50051
+$ docker run --rm -it -p 50051:50051 -p 8082:8082 ghcr.io/opiproject/opi-smbios-bridge:main
+2024/06/13 23:07:43 gRPC Server listening at [::]:50051
+2024/06/13 23:07:43 HTTP Server listening at 8082
 ```
 
 on X86 management VM run
